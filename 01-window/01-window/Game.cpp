@@ -22,6 +22,14 @@ void Game::keyPressed(int key)
 {
 	if (key == GLFW_KEY_ESCAPE) // Escape code
 		bPlay = false;
+	else if (key == GLFW_KEY_1) //tecla 1
+		glClearColor(0.3f, 0.0f, 0.0f, 1.0f); //rojo
+	else if (key == GLFW_KEY_2) //tecla 2
+		glClearColor(0.0f, 0.3f, 0.0f, 1.0f); //verde
+	else if (key == GLFW_KEY_3) //tecla 3
+		glClearColor(0.0f, 0.0f, 0.3f, 1.0f); //azul
+	else if (key == GLFW_KEY_0) //tecla 0
+		glClearColor(0.3f, 0.3f, 0.3f, 1.0f); //gris, original
 	keys[key] = true;
 }
 
