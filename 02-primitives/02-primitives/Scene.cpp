@@ -4,15 +4,15 @@
 
 Scene::Scene()
 {
-	for(int i = 0; i < 4; i++)
-		quads[i] = NULL;
+	for (int i = 0; i < 4; i++)
+		circulos[i] = NULL;
 }
 
 Scene::~Scene()
 {
-	for(int i = 0; i < 4; i++)
-		if(quads[i] != NULL)
-			delete quads[i];
+	for (int i = 0; i < 4; i++)
+		if (circulos[i] != NULL)
+			delete circulos[i];
 }
 
 
@@ -20,7 +20,7 @@ void Scene::init()
 {
 	initShaders();
 	for(int i = 0; i < 4; i++)
-		quads[i] = Quad::createQuad(-0.75f + (i % 2), -0.75f + (i / 2), 0.5f, 0.5f, program);
+		circulos[i] = Circulo::createCirculo(-0.5f + (i % 2), -0.5f + (i / 2), 0.25f, program);
 }
 
 void Scene::update(int deltaTime)
@@ -30,8 +30,8 @@ void Scene::update(int deltaTime)
 void Scene::render()
 {
 	program.use();
-	for(int i = 0; i < 4; i++)
-		quads[i]->render();
+	for (int i = 0; i < 4; i++)
+		circulos[i]->render();
 }
 
 void Scene::initShaders()
